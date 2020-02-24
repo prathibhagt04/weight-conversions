@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weight-convertion</title>
+</head>
+<style>
+    .inputstyle {
+        margin: 20px;
+        padding: 10px;
+        box-sizing: border-box;
+        font-size: large;
+    }
+</style>
+
+<body style="background-color: lightcyan;">
+    <div>
+        <h1
+            style="text-decoration: solid underline;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;color: brown; margin-top:100px;margin-left: 180px; position: absolute;">
+            Checkout this simple unit conversion </h1>
+    </div>
+    <div
+        style="position:absolute;margin-top: 100px; margin-top:200px;margin-left: 150px; font-size: x-large;font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; color: red;">
+        Kg (kilograms)<input id="kgInput" class="inputstyle" type="text" oninput="takeKGValue()">
+        Pound<input id="poundInput" class="inputstyle" type="text" oninput="takePOUNDValue()">
+        Ounce<input id="ounceInput" class="inputstyle" type="text" oninput="takeOUNCEValue()">
+    </div>
+</body>
+<script>
+    function takeKGValue() {
+        var kgInput = (document.querySelector("#kgInput").value).toString();
+        if (isNaN(Number(kgInput))) {
+            var kgUpdated = kgInput.substring(0, kgInput.length - 1);
+            document.querySelector("#kgInput").value = kgUpdated;
+            kgInput = kgUpdated;
+            alert("Please enter a valid number")
+        }
+        var poundValue = kgInput * 2.20462;
+        var ounceValue = kgInput * 35.274;
+        document.querySelector("#poundInput").value = poundValue;
+        document.querySelector("#ounceInput").value = ounceValue;
+    }
+    function takePOUNDValue() {
+        var poundInput = (document.querySelector("#poundInput").value).toString();
+        if (isNaN(Number(poundInput))) {
+            var poundUpdated = poundInput.substring(0, poundInput.length - 1);
+            document.querySelector("#poundInput").value = poundUpdated;
+            poundInput = poundUpdated;
+            alert("Please enter a valid number")
+        }
+        var kgValue = poundInput / 2.20462;
+        var ounceValue = poundInput * 0.0625;
+        document.querySelector("#kgInput").value = kgValue;
+        document.querySelector("#ounceInput").value = ounceValue;
+
+    }
+    function takeOUNCEValue() {
+        var ounceInput = (document.querySelector("#ounceInput").value).toString();
+        if (isNaN(Number(ounceInput))) {
+            var ounceUpdated = ounceInput.substring(0, ounceInput.length - 1);
+            document.querySelector("#ounceInput").value = ounceUpdated;
+            ounceInput = ounceUpdated
+            alert("Please enter a valid number")
+        }
+        var kgValue = ounceInput / 35.274;
+        var poundValue = ounceInput / 0.0625;
+        document.querySelector("#kgInput").value = kgValue;
+        document.querySelector("#poundInput").value = poundValue;
+    }
+</script>
+
+</html>
