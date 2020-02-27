@@ -51,7 +51,7 @@
             alert("Please enter a valid number")
         }
         var kgValue = poundInput / 2.20462;
-        var ounceValue = poundInput * 0.0625;
+        var ounceValue = poundInput * 16;
         document.querySelector("#kgInput").value = kgValue;
         document.querySelector("#ounceInput").value = ounceValue;
 
@@ -65,7 +65,7 @@
             alert("Please enter a valid number")
         }
         var kgValue = ounceInput / 35.274;
-        var poundValue = ounceInput / 0.0625;
+        var poundValue = ounceInput / 16;
         document.querySelector("#kgInput").value = kgValue;
         document.querySelector("#poundInput").value = poundValue;
     }
